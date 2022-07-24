@@ -1,1 +1,10 @@
 link de template base utilizado: https://startbootstrap.com/theme/clean-blog
+
+Como testar o projeto:
+>baixe o diretório do github(clone)
+>
+>dento da pasta raiz, Com python instalado no computar, crie um ambiente virtual: python -m venv venv
+>Ative o ambinte virtual:
+>instale as bibliotecas: pip install -r requirements.txt
+>rode projeto: python manage.py runserver
+>em seguinda acesse o localhost na porta 8000
