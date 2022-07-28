@@ -24,3 +24,11 @@ class Post(Base):
     imagem = StdImageField('Imagem', upload_to=get_file_path,
                            variations={'thumb': {"width": 480, "height": 480, "crop": True}})
 
+    def __str__(self):
+        return self.titulo_post
+
+
+class Sobre(Base):
+    sobre = models.TextField()
+
+    

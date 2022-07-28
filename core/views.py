@@ -9,3 +9,6 @@ class IndexView(TemplateView):
 
 class LoginView(TemplateView):
 	template_name = 'login.html'
+
+class CadastroView(TemplateView):
+	template_name = 'cadastro.html'
