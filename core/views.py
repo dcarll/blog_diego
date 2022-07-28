@@ -1,5 +1,5 @@
 
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, FormView
 
 #criação das views
 
@@ -12,3 +12,9 @@ class LoginView(TemplateView):
 
 class CadastroView(TemplateView):
 	template_name = 'cadastro.html'
+
+class PostView(TemplateView):
+	template_name = 'post.html'
+
+class AboutView(TemplateView):
+	template_name = 'about.html'
