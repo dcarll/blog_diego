@@ -1,5 +1,10 @@
 
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView, FormView, ListView, CreateView, UpdateView, DeleteView
+from django.views.generic.detail import DetailView
+
+
+
+from .models import Sobre, Post
 
 #criação das views
 
@@ -13,8 +18,18 @@ class LoginView(TemplateView):
 class CadastroView(TemplateView):
 	template_name = 'cadastro.html'
 
-class PostView(TemplateView):
+class PostView(ListView):
 	template_name = 'post.html'
+	model = Post
+	queryset = Post.objects.all()
+	context_object_name = 'post'
 
-class AboutView(TemplateView):
+
+	
+
+class AboutView(ListView):
 	template_name = 'about.html'
+	model = Sobre
+	queryset = Sobre.objects.all()
+	context_object_name = 'sobre'
+
