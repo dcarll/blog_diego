@@ -10,4 +10,4 @@ class SobreAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-	list_display = ('titulo_post', 'autor_post', 'conteudo_post', 'imagem')
+	list_display = ('titulo_post', 'autor_post', 'conteudo_post', 'slug', 'imagem', )

@@ -18,7 +18,7 @@
                   <ul class="navbar-nav ms-auto py-4 py-lg-0">
                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 text-primary" href="{% url 'index'%}">Home</a></li>
                      <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 text-primary" href="{% url 'about' %}">About</a></li>
-                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 text-primary" href="{% url 'post' %}">Post</a></li>
+                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 text-primary" href="{% url 'posts' %}">Post</a></li>
                   </ul>
                </div>
             </div>
@@ -39,8 +39,8 @@
                               <div class="card-body text-black">
                                 <h1 class="card-title text-center">Sobre</h1>
                                 <p class="card-text text-center">
-                                  {% for s in sobre%}
-                                    {{s}}
+                                  {% for s in sobre %}
+                                    {{s.sobre}}
                                  {%endfor%}
                                 </p>
                               </div>

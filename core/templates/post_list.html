@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% for message in messages %}
+    {% if 'success' in message.tags %}
+      <p class="alert alert-success" role="alert"><span style="font-weight: bold">{{ message }}</span></p>
+    {% else %}
+      <p class="alert alert-danger" role="alert"><span style="font-weight: bold">{{ message }}</span></p>
+    {% endif %}
+  {% endfor %}
+
+  <div class="row">
+    <div class="col-sm-6">
+      <form action="." method="GET" class="form-inline">
+        <input type="text" id="search" name="search" class="form-control" placeholder="Busca">
+        <input type="submit" class="btn btn-primary" style="margin-left: 10px;" value="OK">
+      </form>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h2>Posts    
+
+    {% if object_list %}
+     {% for obj in object_list %}
+      <p class="alert alert-warning"></p>
+        <a href="{{ obj.get_absolute_url }}">
+          <h1>
+            {{obj.titulo_post}}
+         </h1>
+        </a>
+        
+          <p>{{obj.conteudo_post}}</p>
+          Autor do post: {{obj.autor_post}} <br>
+          Data do post: {{obj.criado}}
+        
+      {%endfor%}
+    {% endif %}
+
+  </div>
+
+  {% include 'pagination.html' %}
+
+{% endblock %}
+
+{% block js %}
+
+  <script>
+    // Close alert after 2 seconds
+    window.setTimeout(function() {
+      $('.alert').fadeTo(500, 0).slideUp(500, function() {
+        $(this).remove();
+      });
+    }, 2000);
+  </script>
+
+{% endblock js %}
