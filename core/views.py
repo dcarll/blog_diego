@@ -1,6 +1,6 @@
 
 from django.views.generic import TemplateView, FormView, ListView, CreateView, UpdateView, DetailView
-from django.contrib.auth.mixins import LoginRequiredMixin
+#from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse
@@ -37,15 +37,9 @@ class PostView(ListView):
 	model = Post
 	paginate_by = 2
 
-	def query_set(self):
-		queryset = super(PostView, self).get_queryset()
-		search = self.request.GET.get('search')
-		if search:
-			queryset = queryset.filter(
-				Q(post__icontains)
-				)
 
-class PostList(LoginRequiredMixin, ListView):
+
+class PostList(ListView):
     model = Post
     template_name = 'post_list.html'
     paginate_by = 2
@@ -70,6 +64,6 @@ class AboutView(ListView):
 class PostDetalhesView(DetailView):
     model = Post
     template_name = 'post_detail.html'
-    context_object_name = 'produto'
+    context_object_name = 'post'
 
     

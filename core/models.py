@@ -40,7 +40,7 @@ class Post(Base):
 
 
     def get_absolute_url(self):
-        return reverse_lazy('post:post_detail', kwargs={'pk': self.pk})
+        return reverse_lazy('posts:post_detail', kwargs={'pk': self.pk})
 
 
     def to_dict_json(self):

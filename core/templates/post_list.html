@@ -27,7 +27,7 @@
       <p class="alert alert-warning"></p>
         <a href="{{ obj.get_absolute_url }}">
           <h1>
-            {{obj.titulo_post}}
+            {{ obj.titulo_post}}
          </h1>
         </a>
         
@@ -46,6 +46,7 @@
 
 {% block js %}
 
+<!--
   <script>
     // Close alert after 2 seconds
     window.setTimeout(function() {
@@ -54,5 +55,5 @@
       });
     }, 2000);
   </script>
-
+-->
 {% endblock js %}

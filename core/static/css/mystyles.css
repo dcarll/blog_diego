@@ -1,3 +1,7 @@
-mynav{
-	background-color: #6f9fae
+.container-post{
+	background-color: #A9A9A9;
+	margin:0 auto;
+}
+.flexivel{
+    display: flex;
 }
